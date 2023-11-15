@@ -6,13 +6,13 @@ public class Question {
 	private int points;
 	
 	public Question(String prompt, String answer, int points) {
-		this.prompt = prompt;
+		this.setPrompt(prompt);
 		this.answer = answer;
 		this.points = points;
 	}
 	
 	public void displayPrompt() {
-		System.out.println(this.prompt + "(" + this.points + " points)");
+		System.out.println(this.getPrompt() + "(" + this.points + " points)");
 	}
 	
 	public int checkAnswer(String givenAnswer) {
@@ -36,5 +36,13 @@ public class Question {
 		q.displayPrompt();
 		System.out.println(q.checkAnswer("hi"));
 		System.out.println(q.checkAnswer("8"));
+	}
+
+	public String getPrompt() {
+		return prompt;
+	}
+
+	public void setPrompt(String prompt) {
+		this.prompt = prompt;
 	}
 }
